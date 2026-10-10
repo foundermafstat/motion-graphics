@@ -33,3 +33,10 @@
 - Домены remotion.dev и remotion.media из этой сети недоступны (таймаут). npm, GitHub, PyPI и Google Storage работают
 - Поэтому рендер идёт через стоковый Chrome Headless Shell от Google: путь прописан в remotion.config.ts (~/.remotion-browser/)
 - Скилл remotion-docs и прямые ссылки на remotion.dev могут не открываться — опирайся на скиллы в .claude/skills и типы в node_modules
+
+## Структура
+- src/ios/ — переиспользуемый iOS-кит (экран 393×852 pt): Phone, Stack (push-навигация), Keyboard, components (Row, Group, Toggle, Tap, FieldRow, Swap…), icons
+- UI внутри телефона — системный шрифт (SF Pro на macOS); подписи вокруг — Inter
+- src/family/ — ролик FamilySetup: timeline.ts (все моменты в кадрах + подписи), Captions, FamilySetup
+- src/scenes/family/ — экраны ролика; время событий берут из T в timeline.ts, а не из локальных кадров
+- Чтобы сдвинуть тайминг — правь только timeline.ts
